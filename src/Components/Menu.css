@@ -52,3 +52,26 @@
     color: #e91e63;
     font-weight: bold;
   }
+
+  .filter-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .filter-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filter-btn:hover {
+    background-color: #e0e0e0;
+  }

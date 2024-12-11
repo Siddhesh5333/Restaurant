@@ -1,0 +1,54 @@
+.menu {
+    padding: 2rem;
+  }
+  
+  .menu-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .menu-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .menu-img {
+    width: 150px; /* Set a uniform width */
+    height: 150px; /* Set a uniform height */
+    object-fit: cover; /* Ensure the image fits within the dimensions without distortion */
+    border-radius: 8px; /* Optional: Add rounded corners for aesthetics */
+    display: block; /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the image horizontally */
+  }
+  
+  
+  .menu-info {
+    font-size: 0.9rem;
+  }
+  
+  .menu-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-desc {
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-price {
+    color: #e91e63;
+    font-weight: bold;
+  }

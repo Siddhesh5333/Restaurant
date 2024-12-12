@@ -93,7 +93,7 @@
     align-items: center;
   }
   
-  .delivery-tag {
+  .status-tag {
     font-size: 0.875rem;
     font-weight: bold;
     padding: 0.25rem 0.5rem;
@@ -101,11 +101,24 @@
     color: #ffffff;
   }
   
-  .delivery-tag.free {
+  .status-tag.open {
     background-color: #22c55e;
   }
   
-  .delivery-tag.paid {
+  .status-tag.closed {
     background-color: #ef4444;
   }
+
+  .restaurant-card.closed {
+    opacity: 0.5; /* Dim the card */
+    pointer-events: none; /* Disable interactions with closed restaurants */
+  }
+  
+  .closed-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #ff0000;
+  }
+  
   

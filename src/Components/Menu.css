@@ -1,6 +1,11 @@
 .menu {
     padding: 2rem;
   }
+
+  .Restitle{
+    margin-top: 0%;
+    color:#ff1547;
+  }
   
   .menu-head {
     display: flex;
@@ -12,7 +17,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   
   .menu-card {
@@ -25,7 +30,7 @@
   }
   
   .menu-img {
-    width: 150px; /* Set a uniform width */
+    width: 205px; /* Set a uniform width */
     height: 150px; /* Set a uniform height */
     object-fit: cover; /* Ensure the image fits within the dimensions without distortion */
     border-radius: 8px; /* Optional: Add rounded corners for aesthetics */
@@ -60,11 +65,15 @@
   }
   
   .filter-btn {
-    padding: 0.5rem 1rem;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    padding: 0.3rem 0.6rem;
+    background-color: #ff3a5b;
+    border: 1px solid #e6e6e6;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Lobster', cursive; /* Apply foodie font */
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .filter-btn.active {
@@ -73,5 +82,5 @@
   }
   
   .filter-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #ff6a90;
   }

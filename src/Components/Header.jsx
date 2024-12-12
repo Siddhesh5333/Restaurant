@@ -1,26 +1,35 @@
-import React from "react";
+// Header.js
+import React, { useState,useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
+import CartModal from "./CartModal";
 import "./Header.css"
 
 const Header = () => {
+  const { cart } = useContext(CartContext);
+  const [isCartModalOpen, setCartModalOpen] = useState(false);
+
+  const toggleCartModal = () => {
+    setCartModalOpen(!isCartModalOpen);
+  };
+
   return (
     <header className="header flex justify-between items-center py-4">
       <div className="flex items-center space-x-4">
-      <span className="text-gray-600">
-  <i className="fas fa-hamburger"></i> DZYRIS
-</span>
+        <span className="text-gray-600">
+          <i className="fas fa-hamburger"></i> DZYRIS
+        </span>
       </div>
       <div className="flex items-center space-x-4">
-        <input type="text" placeholder="Search for..." className="search-input" />
-        <button className="btn">
-          <i className="fas fa-search"></i>
-        </button>
         <button className="btn">
           <i className="fas fa-filter"></i>
         </button>
-        <button className="btn">
-          <i className="fas fa-shopping-cart"></i>
+        <button className="btn" onClick={toggleCartModal}>
+          <i className="fas fa-shopping-cart"></i> {cart?.length || 0}
         </button>
       </div>
+
+      {isCartModalOpen && <CartModal closeModal={toggleCartModal} />}
     </header>
   );
 };

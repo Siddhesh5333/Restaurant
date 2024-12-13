@@ -21,16 +21,30 @@ const ItemModal = ({ item, closeModal }) => {
     );
   };
 
+  // Generate unique ID for the item (if it's not already passed with the item)
+  const generateUniqueId = () => {
+    return `${item.name}-${new Date().getTime()}`; // Creates a unique ID based on the name and timestamp
+  };
+
+  const calculateTotalPrice = () => {
+    const addOnTotal = addOns.reduce((total, addOn) => total + Number(addOn.price), 0);
+    return item.price + addOnTotal;
+  };
+
   // Handle add to cart
   const handleAddToCart = () => {
     const cartItem = {
       ...item,
       quantity,
       addOns,
+      totalPrice: calculateTotalPrice() * quantity, // Calculate total price for the item
+      id: generateUniqueId(),
+      isNewItem: false,
     };
-    addToCart(cartItem); // Add item to the cart using context
-    closeModal(); // Close the modal
+    addToCart(cartItem);
+    closeModal();
   };
+
 
   return (
     <div className="modal-overlay">

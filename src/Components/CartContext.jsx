@@ -8,20 +8,27 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (item) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.name === item.name);
-      if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.name === item.name
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
-        );
+      const existingItemIndex = prevCart.findIndex((cartItem) => cartItem.id === item.id);
+  
+      if (existingItemIndex !== -1) {
+        // If item exists, update quantity and total price
+        const updatedCart = [...prevCart];
+        updatedCart[existingItemIndex].quantity = item.quantity;
+        updatedCart[existingItemIndex].totalPrice = item.totalPrice; // Update total price
+        return updatedCart;
+      } else {
+        // If item is new, add it
+        return [...prevCart, item];
       }
-      return [...prevCart, item];
     });
   };
 
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => prevCart.filter((cartItem) => cartItem.id !== itemId));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

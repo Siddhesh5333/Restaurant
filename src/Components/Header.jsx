@@ -21,9 +21,10 @@ const Header = () => {
         </span>
       </div>
       <div className="flex items-center space-x-4">
-        <button className="btn">
-          <i className="fas fa-filter"></i>
-        </button>
+      <button className="btn login-btn">
+  <i className="fas fa-sign-in-alt"></i>
+</button>
+
         <button className="btn" onClick={toggleCartModal}>
           <i className="fas fa-shopping-cart"></i> {cart?.length || 0}
         </button>
